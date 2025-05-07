@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1200</width><height>800</height></rect>
+  </property>
+  <property name="windowTitle"><string>Red Pitaya SDR</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <!-- Üst Bağlantı & Frekans Ayarları -->
+    <item>
+     <layout class="QHBoxLayout" name="controlLayout">
+      <item>
+       <widget class="QLineEdit" name="ipLineEdit">
+        <property name="placeholderText"><string>IP Address</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="portLineEdit">
+        <property name="placeholderText"><string>Port</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="rxLabel">
+        <property name="text"><string>RX Freq</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="rxFreqSlider">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+        <property name="minimum"><number>300</number></property>
+        <property name="maximum"><number>10000</number></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="rxFreqSpin">
+        <property name="minimum"><double>30.0</double></property>
+        <property name="maximum"><double>1000.0</double></property>
+        <property name="singleStep"><double>0.1</double></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="txLabel">
+        <property name="text"><string>TX Freq</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="txFreqSlider">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+        <property name="minimum"><number>300</number></property>
+        <property name="maximum"><number>10000</number></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="txFreqSpinBox">
+        <property name="minimum"><double>30.0</double></property>
+        <property name="maximum"><double>1000.0</double></property>
+        <property name="singleStep"><double>0.1</double></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="connectButton">
+        <property name="text"><string>Connect</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text"><string>Start</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="text"><string>Stop</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pttButton">
+        <property name="text"><string>PTT</string></property>
+        <property name="checkable"><bool>true</bool></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- FFT Grafik Alanı -->
+    <item>
+     <widget class="QWidget" name="fftPlotWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Waterfall Grafik Alanı -->
+    <item>
+     <widget class="QWidget" name="waterfallPlotWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Mode Butonu -->
+    <item>
+     <widget class="QPushButton" name="modeButton">
+      <property name="text"><string>Change FFT Mode</string></property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
